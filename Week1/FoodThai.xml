@@ -1,8 +1,54 @@
 <Food>
     <Thaifood>
-        <FoodID>001</FoodID>
-        <FoodName>ผัดไท</FoodName>
-        <FoodPrice>120 บาท </FoodPrice>
-
+        <FoodNo1>
+            <FoodID>001</FoodID>
+            <FoodName>ผัดไท</FoodName>
+            <FoodPrice>120 บาท </FoodPrice>
+        </FoodNo1>
+        <FoodNo2>
+            <FoodID>002</FoodID>
+            <FoodName>หอยทอด</FoodName>
+            <FoodPrice>50 บาท </FoodPrice>
+        </FoodNo2>
+        <FoodNo3>
+            <FoodID>003</FoodID>
+            <FoodName>ผัดพระเพรา</FoodName>
+            <FoodPrice>80 บาท </FoodPrice>
+        </FoodNo3>
+        <FoodNo4>
+            <FoodID>004</FoodID>
+            <FoodName>ปูผัดผงกะหรี่</FoodName>
+            <FoodPrice>150 บาท </FoodPrice>
+        </FoodNo4>
+        <FoodNo5>
+            <FoodID>005</FoodID>
+            <FoodName>ลาบก้อย</FoodName>
+            <FoodPrice>70 บาท </FoodPrice>
+        </FoodNo5>
+        <FoodNo6>
+            <FoodID>006</FoodID>
+            <FoodName>ต้มยำกุ้ง(กุ้งแห้ง 5 ตัว)</FoodName>
+            <FoodPrice>200 บาท </FoodPrice>
+        </FoodNo6>
+        <FoodNo7>
+            <FoodID>007</FoodID>
+            <FoodName>ผัดพริกหมู</FoodName>
+            <FoodPrice>40 บาท </FoodPrice>
+        </FoodNo7>
+        <FoodNo8>
+            <FoodID>008</FoodID>
+            <FoodName>กุ้งอบวุ้นเส้น</FoodName>
+            <FoodPrice>180 บาท </FoodPrice>
+        </FoodNo8>
+        <FoodNo9>
+            <FoodID>009</FoodID>
+            <FoodName>ข้าวคลุกกะปิ</FoodName>
+            <FoodPrice>70 บาท </FoodPrice>
+        </FoodNo9>
+        <FoodNo10>
+            <FoodID>010</FoodID>
+            <FoodName>ปลาดุกผัดพริกขิง</FoodName>
+            <FoodPrice>90 บาท </FoodPrice>
+        </FoodNo10>
     </Thaifood>
 </Food>
