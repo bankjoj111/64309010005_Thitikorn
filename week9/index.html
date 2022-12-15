@@ -1,257 +1,102 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title>Title</title>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>movieReview</title>
+    <link rel="stylesheet" href="style.css">
+    
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <style>
-        * {
-        box-sizing: border-box;
-        }
-        .movieName{
-        text-align: center;
-        }
-        .btn1{
-        padding: 1em 2em;
-        border: 0.1em solid black;
-        margin: 1em 2em 0;
-        border-radius: 0.15em;
-        box-sizing: border-box;
-        text-decoration: none;
-        font-family: "Roboto", sans-serif;
-        font-weight: 300;
-        color: black;
-        text-align: center;
-        transition: all 0.5s;
-        }
+</head>
 
-        .btn1:hover{
-        color: white;
-        background-color: royalblue
-        }
-        .btnzzz{
-            text-align: center;
-        }
-        .column {
-        float: left;
-        width: 50%;
-        padding: 10px;
-        height: 300px;
-        }
+<body onload="getAjax()">
 
-        .column1 {
-        float: left;
-        width: 33%;
-        padding: 10px;
-        }
-        .column2 {
-        float: left;
-        width: 33%;
-        padding: 10px;
-        }
+    
 
-        .column3 {
-        float: left;
-        width: 33%;
-        padding: 10px;
-        }
-
-        .column4 {
-        float: left;
-        width: 16%;
-        padding: 10px;
-        }
-
-        .column5 {
-        float: left;
-        width: 16%;
-        padding: 10px;
-        }
-
-        .column6 {
-        float: left;
-        width: 16%;
-        padding: 10px;
-        }
-
-        .column7 {
-        float: left;
-        width: 16%;
-        padding: 10px;
-        }
-
-        .column8 {
-        float: left;
-        width: 16%;
-        padding: 10px;
-        }
-
-        .column9 {
-        float: left;
-        width: 16%;
-        padding: 10px;
-        }
-
-        .columnTEST {
-        float: left;
-        width: 100%;
-        padding: 10px;
-        padding-bottom: 10px;
-        }
-
-        .columnVDO {
-        float: left;
-        width: 100%;
-        padding: 10px;
-        padding-bottom: 10px;
-        text-align: center;
-        }
-
-        .row:after {
-        content: "";
-        display: table;
-        clear: both;
-        }
-
-        .text1{
-            color: crimson;
-            text-align: center;
-            font-size: 1.25rem;
-        }
-
-        .text2{
-            color:dodgerblue;
-            text-align: center;
-            font-size: 1.25rem;
-        }
-
-        .text3{
-            color: brown;
-            text-align: center;
-            font-size: 1.25rem;
-        }
-
-        .text4{
-            text-align: justify;
-            font-size: 1.25rem;
-        }
-        .poster{
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
-        width: 50%;
-        box-shadow: 10px 10px 5px #ccc;
-        }
-
-        .c4{
-            text-align: center;
-            font-size: 1.1rem;
-        }
-        .vdo123{
-            box-shadow: 10px 10px 5px #ccc;
-            width: 560px;
-            height: 315px;
-        }
-
-        #display .column4{
-            background-color: #FCA593;
-        }
-
-        #display .column5{
-            background-color: #F87155
-        }
-
-        #display .column6{
-            background-color: #FCA593;
-        }
-
-        #display .column7{
-            background-color: #F87155
-        }
-
-        #display .column8{
-            background-color: #FCA593;
-        }
-
-        #display .column9{
-            background-color: #F87155
-        }
-
-    </style>
-  </head>
-  <body onload="getAjax()">
-    <table class="table" id="display"></table>
-
-    <div class="table-responsive" id="display"></div>
-    <div class="container">
-      <button class="btn" onclick="pre()">ก่อนหน้า</button>
-      <button class="btn" onclick="next()">หน้าถัดไป</button>
-      
+    <div class="btnzzz">
+        <button class="btn1" onclick="prev()">ก่อนหน้า</button>
+        <button class="btn1" onclick="next()">ถัดไป</button>
     </div>
-        <script>
-            let xhttp = new XMLHttpRequest();   
-            function getAjax(){
+
+    <div class="content" id="display"></div>
+
+
+
+    <script>
+        let xhttp = new XMLHttpRequest();
+        let i = 0;
+           
+        function getAjax(){
             xhttp.open("GET",'http://localhost:3000/movieReview');
             xhttp.send();
-            let temp = '';
-            let i = 0; 
-        xhttp.onload = function() {
-            let obj = JSON.parse(this.responseText);
-    
-            for (let i = 0; i < obj.length; i++) {
+            xhttp.onload = function(){
+                let obj = JSON.parse(this.responseText);
+                test = obj.length
+                
+                let temp = '';
+
                 temp += ''
-                + '<h1 class="movieName">' + obj[i].movieName + '</h1>'
-                    + '<div class="row">'
-                    + '<div class="column">'
-                    + '<img class="poster" src=' + obj[i].picture + '>'
-                    + '</div>'
+                +'<h1 class="movieName">'+obj[i].movieName+'</h1>'
+            
+                +'<div class="row">'
+                    +'<div class="column">'
+                        + '<img class="poster" src=' + obj[i].picture + '>'
+                    +'</div>'
+
                     +'<div class="column">'
                         +'<div class="column1">'
-                            +'<h2 class="text1">ความยาวหนัง&nbsp&nbsp'+obj[i].movieLength+'&nbsp&nbspนาที</h2>'
+                            +'<h2 class="text1">ความยาวหนัง<br>'+obj[i].movieLength+'&nbsp&nbspนาที</br></h2>'
                         +'</div>'
 
                         +'<div class="column2">'
-                            +'<h2 class="text2">ผู้กำกับ&nbsp&nbsp'+obj[i].director+'</h2>'
+                            +'<h2 class="text2">ผู้กำกับ<br>'+obj[i].director+'</br></h2>'
                         +'</div>'
 
                         +'<div class="column3">'
-                            +'<h2 class="text3">หมวดหมู่&nbsp&nbsp'+obj[i].category+'</h2>'
+                            +'<h2 class="text3">หมวดหมู่<br>'+obj[i].category+'</br></h2>'
                         +'</div>'
 
                         +'<div class="columnVDO">'
-                            +'<iframe class="vdo123" src='+obj[i].trailer+' title="YouTube video player" frameborder="0" ></iframe>'
+                            +'<iframe class="vdo123" src='+ obj[i].trailer+' title="YouTube video player" frameborder="0" ></iframe>'
                         +'</div>'
 
                         +'<div class="columnTEST">'
                             +'<h2 class="text4">'+obj[i].review.review+'</h2>'
                         +'</div>'
-            }
-    console.log(temp);
-    // Set the innerHTML of the table element to the temp variable
-    document.getElementById('display').innerHTML = temp;
+
+                    
+
+                    
+                    +'<div class="column9">'
+                        +'<h2 class="box">เฉลี่ย : ' +obj[i].review.score.average+'  คะแนน</h2>'
+                        
+                    +'</div>'
+
+                    
+
+                    +'</div>'
+                +'</div>'
+                document.getElementById('display').innerHTML = temp
             }
         }
-                function next(){
-                  console.log(i);
-                  i++;
-                  getAjax();
-                }
-                function pre(){
-                  console.log(i);
-                  i--;
-                  getAjax();
-                }
-                
-        </script>
-      
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-  </body>
+        function next() {
+              i++;
+              if(i > test-1){
+                i=0;
+              }
+              getAjax();
+            }
+
+            function prev() {
+              i--;
+              if(i < 0){
+                i=test-1;
+              }
+              getAjax();
+            }
+    </script>
+
+</body>
+
 </html>
