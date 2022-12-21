@@ -38,7 +38,7 @@ let obj = {
         "Firstlastname": "นายธัชพล ขจรเกียรติสกุล",
         "Department" : "การเงิน",
         "position" : "Account",
-        "salary" : 12000 ,
+        "salary" : 12000,
         "Bonus Ranking" : "S"
 },
     "10007" : {
@@ -52,14 +52,14 @@ let obj = {
         "Firstlastname": "นางพัชรียา สําราญทรัพย์",
         "Department" : "การเงิน",
         "position" : "Account",
-        "salary" : 50000 ,
+        "salary" : 50000,
         "Bonus Ranking" : "C"
 },
     "10009" : {
         "Firstlastname": "นางสาวขวัญชนก ธาดาวรวงศ์",
         "Department" : "ไอที",
         "position" : "System Engineer",
-        "salary" : [16000] ,
+        "salary" : [16000],
         "Bonus Ranking" : "A"
 }
 };
