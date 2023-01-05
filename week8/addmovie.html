@@ -19,7 +19,7 @@
     <div class="container">
         <br>
         <div class="header">
-            <h1>MovieReviewByThitikorn</h1>
+            <h1>Movie</h1>
         </div>
         <br>
         <br>
@@ -30,6 +30,7 @@
                     <input type="text" name="movieName" class="form-control" id="movieName" required>
                     <br>
                 </div>
+                
                 <div class="col-4">
                     <label for="" class="form-label">ความยาวหนัง(นาที)</label>
                     <input type="number" name="movieLength" class="form-control" id="movieLength" required>
@@ -40,7 +41,9 @@
                     <input type="text" name="director" class="form-control" id="director" required>
                     <br>
                 </div>
+                
                 <div class="col-6">
+                    
                     <label for="" class="form-label">หมวดหมู่</label>
                     <select type="text" name="category" class="form-control" id="category" required>
                         <option></option>
@@ -52,7 +55,14 @@
                         <option>แฟนตาซี(Fantasy)</option>
                         <option>ผี(Horror)</option>
                       </select>
+                      
                 </div>
+                <div class="col-6">
+                    <label for="" class="form-label">วัน/เดือน/ปีที่ฉาย</label>
+                    <input type="text" name="date" class="form-control" id="date" required>
+                    <br>
+                </div>
+                
 
                 <div class="col-6">
                     <label for="" class="form-label">รูปหนัง</label>
@@ -60,45 +70,23 @@
                     
                 </div>
                 <div class="col-6">
-                    <label for="" class="form-label">ตัวอย่างหนัง</label>
+                    <label for="" class="form-label">ตัวอย่างหนัง(YouTube Embed url)</label>
                     <input type="text" name="trailer" class="form-control" id="trailer" required>
                     <br>
                 </div>
                 <div class="col-12">
-                    <label for="" class="form-label">รีวิว :</label>
+                    <label for="" class="form-label">นักแสดง :</label>
+                    <textarea type="text" name="actor" class="form-control" id="actor" required></textarea>
+                    <br>
+                </div>
+                <div class="col-12">
+                    <label for="" class="form-label">เรื่องย่อ :</label>
                     <textarea type="text" name="review" class="form-control" id="review" required></textarea>
-                    <br>
-                </div>
-                <div class="col">
-                    <label for="" class="form-label">บทหนัง</label>
-                    <input type="number" name="screenPlay" class="form-control" id="screenPlay" required>
-                </div>
-                <div class="col">
-                    <label for="" class="form-label">การดำเนินเรื่อง</label>
-                    <input type="number" name="playing" class="form-control" id="playing" required>
-                </div>
-                <div class="col">
-                    <label for="" class="form-label">ดนตรีประกอบ</label>
-                    <input type="number" name="music" class="form-control" id="music" required>
-                </div>
-                <div class="col">
-                    <label for="" class="form-label">ฝีมือนักแสดง</label>
-                    <input type="number" name="actorSkills" class="form-control" id="actorSkills" required>
-                </div>
-                &nbsp;
-                <div class="col ">
-                    <label for="" class="form-label">กราฟฟิก</label>
-                    <input type="number" name="graphics" class="form-control" id="graphics" required>
-                    <br>
-                    &nbsp;
-                </div>
-                <div class="col ">
-                    <label for="" class="form-label">คะแนนเฉลี่ย</label>
-                    <input type="number" name="average" class="form-control" id="average" required>
                     <br>
                 </div>
                 
             </div>
+            
             <br>
             <div class="row">
                 <div class="col">
@@ -108,6 +96,7 @@
                 </div>
                 
               </div>
+            
             
     </div>
     </form>
@@ -121,20 +110,15 @@
             "id":'',
             "movieName": document.forms['myForm']['movieName'].value,
             "movieLength":document.forms['myForm']['movieLength'].value, 
+            "date":document.forms['myForm']['date'].value,
             "director":document.forms['myForm']['director'].value, 
-            "category":document.forms['myForm']['category'].value, 
+            "category":document.forms['myForm']['category'].value,
+            "actor":document.forms['myForm']['actor'].value,
             "picture":document.forms['myForm']['picture'].value,
             "trailer":document.forms['myForm']['trailer'].value, 
             "review": {
                 "review":document.forms['myForm']['review'].value, 
-                "score": {
-                    "screenPlay":document.forms['myForm']['screenPlay'].value, 
-                    "playing":document.forms['myForm']['playing'].value, 
-                    "music":document.forms['myForm']['music'].value,
-                    "actorSkills":document.forms['myForm']['actorSkills'].value,
-                    "graphics":document.forms['myForm']['graphics'].value, 
-                    "average":document.forms['myForm']['average'].value  
-                }
+                
             }
         }
         console.log(obj);

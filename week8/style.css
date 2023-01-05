@@ -65,7 +65,7 @@
         width: 50%;
         padding: 10px;
         height: 300px;
-        
+        text-align: center;
         
         }
 
@@ -87,14 +87,15 @@
 
         .column3 {
         float: left;
-        width: 33%;
+        width: 25%;
         padding: 10px;
         border: 3px solid rgb(0, 0, 0);
         background-color: #ccc;
-        
-        
+        content: 1;
         }
-
+.column{
+    text-align: center;
+}
         .column4 {
         float: left;
         width: 16%;
@@ -215,6 +216,14 @@
             height: 315px;
         }
 
+        #display .column3{
+            position: relative;
+            left: 341px;
+            top:4px;
+            padding-left:0px;
+            transform:translatex(-35px) translatey(0px);
+            margin-right:4px;
+        }
         #display .column4{
             background-color: #FCA593;
         }
@@ -222,7 +231,9 @@
         #display .column5{
             background-color: #F87155
         }
-
+        #display .row .column .column3{
+            width:33% !important;
+           }
         #display .column6{
             background-color: #FCA593;
         }
@@ -238,6 +249,14 @@
             font-weight: bold;
 
         }
+        #display .column9 h2{
+            transform:translatex(0px) translatey(0px);
+            letter-spacing:0.9px;
+            word-spacing:2.4px;
+            column-count:1;
+            text-align:center;
+            line-height:51.6px;
+           }
         .box {
             width: 100px;
             height: 50px;
@@ -246,13 +265,40 @@
             animation: rainbow 10s linear infinite;
             margin-left: 260px;
             text-align: center;
-            width: 200px;
+            width: 400px;
+            height: 60px;
             font-size: 20px;
-            border: 5px solid rgb(231, 144, 144);
-            
-            
-            
+            border: 5px solid rgb(231, 144, 144);    
 }
+#trailer{
+    transform:translatex(0px) translatey(0px);
+    width:299% !important;
+   }
+   
+   /* Picture */
+   #picture{
+    width:101% !important;
+   }
+   
+   /* Director */
+   #director{
+    width:101% !important;
+    margin-right:10px;
+   }
+   
+   /* Column 6/12 */
+   .container #myForm .row .col-6{
+    width:26% !important;
+   }
+   
+   /* Date */
+   #date{
+    width:191% !important;
+   }
+   #myForm .col-6 label{
+    margin-right:1px;
+    width:421px;
+   }   
 
 @keyframes rainbow {
   0% {

@@ -44,19 +44,25 @@
                         + '<img class="poster" src=' + obj[i].picture + '>'
                     +'</div>'
 
-                    +'<div class="column">'
+                    +'<div class="column" >'
                         +'<div class="column1">'
                             +'<h2 class="text1">ความยาวหนัง<br>'+obj[i].movieLength+'&nbsp&nbspนาที</br></h2>'
                         +'</div>'
-
+                            
                         +'<div class="column2">'
                             +'<h2 class="text2">ผู้กำกับ<br>'+obj[i].director+'</br></h2>'
                         +'</div>'
 
+                        +'<div class="column2">'
+                            +'<h2 class="text2">วัน/เดือน/ปี ที่ฉาย<br>'+obj[i].date+'</br></h2>'
+                        +'</div>'
+
+
+
                         +'<div class="column3">'
                             +'<h2 class="text3">หมวดหมู่<br>'+obj[i].category+'</br></h2>'
                         +'</div>'
-
+                         
                         +'<div class="columnVDO">'
                             +'<iframe class="vdo123" src='+ obj[i].trailer+' title="YouTube video player" frameborder="0" ></iframe>'
                         +'</div>'
@@ -64,12 +70,12 @@
                         +'<div class="columnTEST">'
                             +'<h2 class="text4">'+obj[i].review.review+'</h2>'
                         +'</div>'
-
+                            
                     
 
                     
                     +'<div class="column9">'
-                        +'<h2 class="box">เฉลี่ย : ' +obj[i].review.score.average+'  คะแนน</h2>'
+                        +'<h2 class="box">นักแสดง : ' +obj[i].actor+'</h2>'
                         
                     +'</div>'
 
