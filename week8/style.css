@@ -170,6 +170,12 @@
             font-size: 1.25rem;
             
         }
+        .text8{
+            color:rgb(227, 67, 245);
+            text-align: center;
+            font-size: 1.25rem;
+            
+        }
         .btn{
             width: 20%;
             height: 150%;
@@ -270,35 +276,7 @@
             font-size: 20px;
             border: 5px solid rgb(231, 144, 144);    
 }
-#trailer{
-    transform:translatex(0px) translatey(0px);
-    width:299% !important;
-   }
-   
-   /* Picture */
-   #picture{
-    width:101% !important;
-   }
-   
-   /* Director */
-   #director{
-    width:101% !important;
-    margin-right:10px;
-   }
-   
-   /* Column 6/12 */
-   .container #myForm .row .col-6{
-    width:26% !important;
-   }
-   
-   /* Date */
-   #date{
-    width:191% !important;
-   }
-   #myForm .col-6 label{
-    margin-right:1px;
-    width:421px;
-   }   
+
 
 @keyframes rainbow {
   0% {
