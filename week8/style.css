@@ -9,12 +9,15 @@
         box-sizing: border-box;
         }
         .form-control{
-            border: 2px solid black;
-
-
+            border: 2.5px solid;
+	        border-image: conic-gradient(from var(--angle), red, yellow, lime, aqua, blue, magenta, red) 1;
+	        animation: 10s rotate linear infinite;
+            background-color: rgba(255, 255, 255, 0.542);
+            font-family: 'Kanit', sans-serif;
         }
         .form-label{
-            font-size: large;
+            font-size: 25px;
+            font-family: 'Kanit', sans-serif;
 
         }
         .header {
@@ -166,7 +169,24 @@
             font-size: 1.25rem;
             
         }
+        .btn{
+            width: 20%;
+            height: 150%;
+            background-image: url("https://i.giphy.com/media/BHNfhgU63qrks/giphy.webp");
+            font-size: 20px;
+            font-family: 'Kanit', sans-serif;
+            font-weight: bold;
 
+        }
+        .btn2{
+            width: 20%;
+            height: 150%;
+            background-image: url("https://i.giphy.com/media/xTiTnHvXHHxOTcdmxO/giphy.webp");
+            font-size: 20px;
+            font-family: 'Kanit', sans-serif;
+            font-weight: bold;
+
+        }
         .text3{
             color: brown;
             text-align: center;
@@ -185,7 +205,9 @@
         border: 5px solid black;
             animation: pulse 5s infinite;
         }
-        
+        .col{
+            text-align: center;
+        }
         
         .vdo123{
             box-shadow: 10px 10px 5px #ccc;
@@ -211,6 +233,10 @@
 
         #display .column8{
             background-color: #FCA593;
+        }
+        .container{
+            font-weight: bold;
+
         }
         .box {
             width: 100px;
@@ -246,4 +272,15 @@
   }
 }
 
+@keyframes rotate {
+	to {
+		--angle: 360deg;
+	}
+}
+
+@property --angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
  

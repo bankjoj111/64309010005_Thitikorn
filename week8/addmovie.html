@@ -23,25 +23,25 @@
         </div>
         <br>
         <br>
-        <form id="myForm" class="was-validated">
+        <form id="myForm">
             <div class="row">
                 <div class="col-8">
-                    <label for="" class="form-label">Movie Name</label>
+                    <label for="" class="form-label">ชื่อหนัง</label>
                     <input type="text" name="movieName" class="form-control" id="movieName" required>
                     <br>
                 </div>
                 <div class="col-4">
-                    <label for="" class="form-label">Movie Length</label>
+                    <label for="" class="form-label">ความยาวหนัง(นาที)</label>
                     <input type="number" name="movieLength" class="form-control" id="movieLength" required>
                 </div>
 
                 <div class="col-6">
-                    <label for="" class="form-label">Director</label>
+                    <label for="" class="form-label">ผู้กำกับ</label>
                     <input type="text" name="director" class="form-control" id="director" required>
                     <br>
                 </div>
                 <div class="col-6">
-                    <label for="" class="form-label">category</label>
+                    <label for="" class="form-label">หมวดหมู่</label>
                     <select type="text" name="category" class="form-control" id="category" required>
                         <option></option>
                         <option>บู๊(Action)</option>
@@ -55,50 +55,59 @@
                 </div>
 
                 <div class="col-6">
-                    <label for="" class="form-label">Picture</label>
+                    <label for="" class="form-label">รูปหนัง</label>
                     <input type="url" name="picture" class="form-control" id="picture" required>
                     
                 </div>
                 <div class="col-6">
-                    <label for="" class="form-label">Trailer</label>
+                    <label for="" class="form-label">ตัวอย่างหนัง</label>
                     <input type="text" name="trailer" class="form-control" id="trailer" required>
                     <br>
                 </div>
                 <div class="col-12">
-                    <label for="" class="form-label">Review</label>
+                    <label for="" class="form-label">รีวิว :</label>
                     <textarea type="text" name="review" class="form-control" id="review" required></textarea>
                     <br>
                 </div>
                 <div class="col">
-                    <label for="" class="form-label">ScreenPlay</label>
+                    <label for="" class="form-label">บทหนัง</label>
                     <input type="number" name="screenPlay" class="form-control" id="screenPlay" required>
                 </div>
                 <div class="col">
-                    <label for="" class="form-label">Playing</label>
+                    <label for="" class="form-label">การดำเนินเรื่อง</label>
                     <input type="number" name="playing" class="form-control" id="playing" required>
                 </div>
                 <div class="col">
-                    <label for="" class="form-label">music</label>
+                    <label for="" class="form-label">ดนตรีประกอบ</label>
                     <input type="number" name="music" class="form-control" id="music" required>
                 </div>
                 <div class="col">
-                    <label for="" class="form-label">actorSkills</label>
+                    <label for="" class="form-label">ฝีมือนักแสดง</label>
                     <input type="number" name="actorSkills" class="form-control" id="actorSkills" required>
                 </div>
+                &nbsp;
                 <div class="col ">
-                    <label for="" class="form-label">graphics</label>
+                    <label for="" class="form-label">กราฟฟิก</label>
                     <input type="number" name="graphics" class="form-control" id="graphics" required>
+                    <br>
+                    &nbsp;
+                </div>
+                <div class="col ">
+                    <label for="" class="form-label">คะแนนเฉลี่ย</label>
+                    <input type="number" name="average" class="form-control" id="average" required>
                     <br>
                 </div>
                 
             </div>
-            
+            <br>
             <div class="row">
                 <div class="col">
-                    <input class="btn btn-primary" type="submit"  required>
+                  <input class="btn btn-primary" onclick="addMovie()" type="button" value="AddMovie">
+                  &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                  <input class="btn2 btn-primary"type="button" onclick="myFunction()" value="Reset form">
                 </div>
                 
-            </div>
+              </div>
             
     </div>
     </form>
@@ -124,7 +133,7 @@
                     "music":document.forms['myForm']['music'].value,
                     "actorSkills":document.forms['myForm']['actorSkills'].value,
                     "graphics":document.forms['myForm']['graphics'].value, 
-                    "average":null 
+                    "average":document.forms['myForm']['average'].value  
                 }
             }
         }
@@ -138,29 +147,9 @@
         xhttp.send(text);
         
     } 
-    (
-        function () {
-    'use strict'
-
-  // Fetch all the forms we want to apply custom Bootstrap validation styles to
-  var forms = document.querySelectorAll('.needs-validation')
-
-  // Loop over them and prevent submission
-  Array.prototype.slice.call(forms)
-    .forEach(function (form) {
-      form.addEventListener('submit', function (event) {
-        if (!form.checkValidity()) {
-          event.preventDefault()
-          event.stopPropagation()
-        }
-        
-
-        form.classList.add('was-validated')
-      },false)
-    } )
-    
-})()
-
+    function myFunction() {
+    document.getElementById("myForm").reset();
+}
     </script>
 
     <!-- Optional JavaScript; choose one of the two! -->
